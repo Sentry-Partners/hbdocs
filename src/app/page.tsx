@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const cards = [
@@ -29,17 +30,30 @@ export default function DocsHome() {
       <div className="absolute right-[-120px] top-40 h-80 w-80 rounded-full bg-sky-300/40 blur-3xl" />
 
       <section className="relative mx-auto max-w-6xl px-6 pb-20 pt-16 text-slate-900">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center rounded-full border border-slate-200 bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-slate-600">
-            Docs Hub
+        <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center rounded-full border border-slate-200 bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-slate-600">
+              Docs Hub
+            </div>
+            <h1 className="mt-6 text-4xl font-semibold tracking-tight md:text-6xl">
+              The canonical layer for everything Heartbeats publishes.
+            </h1>
+            <p className="mt-5 text-base leading-relaxed text-slate-600 md:text-lg">
+              Stable permalinks for API reference, guides, and decks. This is where
+              the ecosystem links back to, no matter where the content lives.
+            </p>
           </div>
-          <h1 className="mt-6 text-4xl font-semibold tracking-tight md:text-6xl">
-            The canonical layer for everything Heartbeats publishes.
-          </h1>
-          <p className="mt-5 text-base leading-relaxed text-slate-600 md:text-lg">
-            Stable permalinks for API reference, guides, and decks. This is where
-            the ecosystem links back to, no matter where the content lives.
-          </p>
+          <div className="relative flex items-center justify-center">
+            <div className="absolute h-64 w-64 rounded-full bg-sky-300/35 blur-3xl" />
+            <Image
+              src="/branding/heartbeats-mark-neon-1024.png"
+              alt="Heartbeats pulse logo"
+              width={360}
+              height={360}
+              className="h-64 w-64 drop-shadow-[0_0_28px_rgba(24,212,255,0.55)] motion-safe:animate-[hbPulseGlow_5s_ease-in-out_infinite]"
+              priority
+            />
+          </div>
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">

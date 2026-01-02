@@ -1,15 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --ink: #0b1220;
-  --muted: #526079;
-  --mist: #f4f6fb;
-  --night: #0b0f1a;
-  --accent: #49f2b2;
+  --hb-ink: #0b0d10;
+  --hb-ink-2: #13161b;
+  --hb-cream: #f6f3ee;
+  --hb-neon: #18d4ff;
+  --hb-neon-soft: #5cbfea;
+  --hb-warm: #f4a356;
+  --hb-text: #101217;
+  --hb-light-text: #eaf6ff;
 }
 
 * {
@@ -17,9 +18,9 @@
 }
 
 body {
-  font-family: "Space Grotesk", "Helvetica Neue", Helvetica, sans-serif;
-  background: var(--night);
-  color: #f8fafc;
+  font-family: var(--font-body);
+  background: var(--hb-ink);
+  color: var(--hb-light-text);
 }
 
 a {
@@ -28,8 +29,31 @@ a {
 }
 
 .glass-panel {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.28);
+  background: rgba(11, 13, 16, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 20px 60px rgba(11, 13, 16, 0.35);
   backdrop-filter: blur(12px);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: rgba(24, 212, 255, 0.3);
+}
+
+@keyframes hbPulseGlow {
+  0%,
+  100% {
+    transform: scale(0.95);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
 }
